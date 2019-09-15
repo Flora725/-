@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>fall</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.box {
+			float: left;
+			padding: 20px;
+			border: 1px solid #ccc;
+		}
+
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div class = "box">
+			<img src="images/1.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/2.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/3.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/4.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/5.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/6.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/7.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/8.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/9.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/10.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/10.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/10.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/11.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/12.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/13.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/14.jpg" alt="">
+		</div>
+		<div class = "box">
+			<img src="images/15.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	window.onload = function() {
+		var container = document.querySelector(".container");
+		var boxes = container.children;
+		var pageWidth = window.innerWidth;
+		var boxWidth = document.querySelector(".box").offsetWidth;
+		var column = Math.floor(pageWidth/boxWidth);
+		var heights = []; // 用于存放每一列的高度，每一列的高度是不断变化的
+
+		for(var i = 0; i < boxes.length; i++) {
+			if(i<column) {
+				heights.push(boxes[i].offsetHeight);
+			}
+			else {
+				var min = getMin(heights);
+				var minHeight = min.value;
+				var minIndex = min.index;
+				boxes[i].style.position = "absolute";
+				boxes[i].style.top = minHeight + "px";
+				boxes[i].style.left = boxes[minIndex].offsetLeft + "px";
+				heights[minIndex] = minHeight + boxes[i].offsetHeight;
+				console.log(i);
+				console.log("heights:" + heights);
+				console.log("top: "+boxes[i].style.top);
+				console.log("left" +boxes[i].style.left);
+
+
+			}
+
+		}
+
+		// 如果触底，就要向后台发送请求，然后把请求回来的图片渲染出来。
+
+		
+		boxes.length-1 //最后一张图片的索引 
+		
+		boxes[boxes.length - 1].offsetTop
+
+
+
+
+
+
+		
+		function getMin(arr) {	// 该函数用来求出一个数组的最小项及最小项的索引
+			var min = {};	
+			min.index = 0;	//min的index属性用来存放最小值的索引
+			min.value = arr[min.index];	//min的value属性用来存放最小值
+			for(var i = 1; i<arr.length; i++) {
+				if(arr[i] < min.value) {
+					min.index = i;
+					min.value = arr[i];
+				}
+			}
+			return min;
+		}
+
+
+	}
+	
+</script>
+</html>

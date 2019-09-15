@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		var grd = ctx.createLinearGradient(50,50,400,400);
+		grd.addColorStop(0.2, "red");
+		grd.addColorStop(0.5, "green");
+		grd.addColorStop(0.8, "blue");
+		ctx.fillStyle = grd;
+		ctx.fillRect(0,0,500,500);
+		
+		
+		
+	</script>
+</html>

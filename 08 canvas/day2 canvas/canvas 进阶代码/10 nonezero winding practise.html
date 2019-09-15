@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>nonezero</title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+
+		//1，画大矩形
+		ctx.moveTo(590,10);
+		ctx.lineTo(10,10);
+		ctx.lineTo(10,380);
+		ctx.lineTo(590,380);
+		ctx.closePath();
+		
+		//2，画小矩形
+		ctx.rect(50,50,200,100);
+		
+		//3，画三角形
+		ctx.moveTo(50,200);
+		ctx.lineTo(250,350);
+		ctx.lineTo(50,350);
+		ctx.closePath();
+		
+		//4，画圆
+		ctx.moveTo(500,200);
+		ctx.arc(400,200,100,0,Math.PI*2);
+		
+		//4，填充	
+		ctx.fillStyle = "skyblue";
+		ctx.fill();
+		
+	</script>
+</html>

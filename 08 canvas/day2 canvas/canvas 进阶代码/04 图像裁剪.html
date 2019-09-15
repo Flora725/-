@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		ctx.arc(300,200,100,0,2*Math.PI);
+		ctx.fill();
+		ctx.clip();
+		ctx.beginPath();
+		ctx.fillStyle = "pink";
+		ctx.fillRect(200,200, 180, 180);
+		
+	</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul li {
+            float: left;
+            list-style: none;
+        }
+        a {
+            display: block;
+            line-height: 40px;
+            /* 这两句代码是关键 */
+            /* 如果nav里面有多少ul，就给nav设置行高，其它都可以继承 */
+            padding: 0 10px;
+        }
+        a:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">女装</a></li>
+            <li><a href="">男装</a></li>
+            <li><a href="">家居</a></li>
+        </ul>
+    </div>
+</body>
+</html>

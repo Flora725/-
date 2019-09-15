@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>rect</title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		//fillRect()
+		ctx.fillStyle="red";
+		ctx.fillRect(10,10,10,10);
+		
+		ctx.fillStyle="green";
+		ctx.fillRect(20,20,10,10);
+		
+		ctx.fillStyle="blue";
+		ctx.fillRect(30,30,10,10); 
+
+		//rect()
+		ctx.beginPath();		// path commands must begin with beginPath
+		ctx.fillStyle="red";
+		ctx.rect(10,10,10,10);
+		ctx.fillStyle="green";
+		ctx.rect(20,20,10,10);
+		ctx.fillStyle="blue";
+		ctx.rect(30,30,10,10);
+		// only 1 fillStyle is allowed per beginPath, so the last blue style fills all
+		ctx.fill()
+	</script>
+</html>

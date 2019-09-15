@@ -1,0 +1,21 @@
+h3 {
+		color: brown;
+	}
+	.people {
+		color: yellow;
+	}
+	#pig {
+		border: 1px solid red;
+	}
+	#tang span {
+		font-size: 30px;
+	}
+	.stu > p {
+		background-color: yellowgreen;
+	}
+	#tang, .people {
+		border: 1px solid green;
+	}
+	p {
+
+	}

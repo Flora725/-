@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span {
+			display: block;
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			float: left;
+		}
+		.progress {
+			border: 1px solid #000;
+			height: 20px;
+			width: 800px;
+			float: left;
+			margin-left: 20px;
+		}
+		.play {
+			background-color: red;
+		}
+		.stop {
+			background-color: green;
+		}
+		.step {
+			height: 100%;
+			width: 0;
+			background-color: grey;
+		}
+	</style>
+</head>
+<body>
+	<div class = "container">
+		<div class = "video">
+			<video src="joy.mp4"></video>
+		</div>
+		<div class = "controller">
+			<span class = "play" id = "ctrl"></span>
+			<div class = "progress">
+				<div class = "step"></div>
+			</div>
+		</div>
+	</div>
+	<button></button>
+</body>
+<script>
+	window.onload = function() {
+		var video = document.querySelector("video");
+		console.log(video.duration);
+		var ctrl = document.querySelector("#ctrl");
+		var btn = document.querySelector("button");
+		btn.onclick = function() {
+			console.log(typeof video.currentTime);
+		}
+
+
+		// 点击播放/暂停
+		ctrl.onclick = function() {
+			
+			if(ctrl.classList.contains("stop")) {
+				video.pause();
+				this.classList.remove("stop");
+			} else {
+				video.play();
+				this.classList.add("stop");
+			}
+			
+			
+		}
+		video.addEventListener("play",function() {
+			console.log("hat");
+		})
+		
+		video.ontimeupdate = function() {
+			var a = video.currentTime / video.duration * 100 + "%";
+			document.querySelector(".step").style.width = a;
+		}
+		document.querySelector(".progress").onclick = function(e) {
+			var percent = e.offsetX / this.clientWidth;
+			video.currentTime = video.duration * percent;
+			document.querySelector(".step").style.width = percent * 100 +"%";
+			video.play();
+			ctrl.classList.add("stop");
+		}
+	}
+	
+
+</script>
+</html>

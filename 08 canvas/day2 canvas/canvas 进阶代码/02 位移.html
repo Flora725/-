@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		ctx.fillRect(50,50,100,40);
+		ctx.translate(50,50);
+		ctx.fillRect(50,50,100,40);
+		
+		
+
+
+	</script>
+</html>

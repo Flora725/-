@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		var arr = ["red","yellow","blue"];
+		var startA = Math.PI/2;
+		var step = Math.PI*120/180;
+		
+		for(var i = 0;i<arr.length; i++ ) {
+			ctx.beginPath();
+			ctx.moveTo(300,200);
+			
+			ctx.arc(300,200,100,startA,startA+step);
+			ctx.closePath();
+			startA+=step;
+			
+			ctx.fillStyle = arr[i];
+			ctx.fill();	
+		}
+		
+		
+
+
+	</script>
+</html>

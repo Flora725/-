@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cube</title>
+	<style>
+
+		.box {
+			width: 200px;
+			height: 200px;
+			border: 1px solid #333;
+			margin: 100px auto;
+			transform-style: preserve-3d;
+			perspective: 500px;
+			transition: all 3s;
+			
+			 
+		}
+		.item {
+			width: 200px;
+			height: 200px;
+			border: 1px solid #333;
+			font-size: 60px;
+			text-align: center;
+			line-height: 200px;
+			position: absolute;
+			
+		}
+		
+		.item:first-child {
+			background-color: pink;
+			transform: translateZ(100px);
+		}
+		.item:nth-child(2) {
+			background-color: blue;
+			transform: rotateY(180deg) translateZ(100px);
+		}
+		.item:nth-child(3) {
+			background-color: green;
+			transform: rotateX(90deg) translateZ(100px);
+		}
+		.item:nth-child(4) {
+			background-color: skyblue;
+			transform: rotateX(-90deg) translateZ(100px);
+		}
+		.item:nth-child(5) {
+			background-color: red;
+			transform: rotateY(-90deg) translateZ(100px);
+		}
+		.item:nth-child(6) {
+			background-color: yellow;
+			transform: rotateY(90deg) translateZ(100px);
+		}
+		.box:hover {
+			transform: rotateX(450deg) rotateY(450deg);
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+		<div class="item">5</div>
+		<div class="item">6</div>
+	</div>
+	</br>
+</body>
+</html>

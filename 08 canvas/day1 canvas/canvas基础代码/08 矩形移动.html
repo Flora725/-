@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		var x = 0;
+		var timer = setInterval(function() {
+			ctx.clearRect(0,0,600,400);
+			ctx.strokeRect(x+10,100,100,50);
+			x+=10;
+			if(x>550) {
+				clearInterval(timer);			}
+			console.log(1);
+			
+		},50);
+		
+		
+	</script>
+</html>

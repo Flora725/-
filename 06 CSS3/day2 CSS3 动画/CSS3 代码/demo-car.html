@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>car</title>
+	<style>
+		img {
+			width: 150px;
+		}
+		@keyframes toRight{
+			0%{}
+			45%{
+				transform: translateX(1000px);
+			}
+			50%{
+				transform: translateX(1000px) rotateY(180deg);
+			}
+			95%{
+				transform: translateX(0) rotateY(180deg);
+			}
+			100%{}
+		}
+		img {
+			animation: toRight 2s .3s linear 2;
+		}
+		
+		
+		
+	</style>
+</head>
+<body>
+	<img src="images/car.jpg" />
+</body>
+</html>

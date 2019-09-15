@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		.section {
+			overflow: hidden;
+		}
+		/*第一页静态*/
+		.one {
+			background-color: skyblue;
+			padding: 100px;
+		}
+		.two {
+			background-color: pink;
+		}
+		.three {
+			background-color: yellowgreen;
+		}
+		.four {
+			background-color: purple;
+		}
+		.one div {
+			text-align: center;
+		}
+		.one div:nth-child(2) {
+			margin: 30px 0; 
+		}
+
+		/*第二页静态*/
+		.two > div {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.two .shield {
+			flex: 6;
+			padding: 100px;
+		}
+		.two .info2 {
+			flex: 9;
+		}
+
+		/*第三页静态*/
+		.three > div {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.three .rock {
+			padding-left: 40px;
+			position: relative;
+		}
+		.rock .rocket {
+			position: absolute;
+			right: 130px;
+			bottom: 120px;
+		}
+
+		/*第四页静态*/
+		.four > div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;	
+		}
+		.four .fashion {
+			width: 100%;
+			height: 134px;
+			margin: 50px;
+			background: url("images/4info.png") no-repeat center;
+		}
+		.four .lines {
+			flex: 1;
+			width: 1004px;
+			background: url("images/4toolbar.png") no-repeat left top, url("images/extra.png") no-repeat right bottom;
+		}
+
+		/*第一屏动画*/
+		.one .txt img {
+			margin: 0 15px;
+		}
+		div.one.animate .txt img {
+			margin: 0;
+			transition: all 1s;
+		}
+
+		/*第二屏动画*/
+		.two .shield img:nth-child(5) {
+			transform: rotate(45deg) translate(200px,300px);
+		}
+		div.two.animate .shield img:nth-child(5) {
+			transform: rotate(0deg) translate(0,0);
+			transition: all 1s;
+		}
+
+		/*第三屏动画*/
+		.three .rocket {
+			transform: translate(-900px,400px);
+		}
+		.section:nth-child(3).animate .rocket {
+			transform: translate(0,0);
+			transition: all 1s;
+		}
+
+		/*第四屏动画*/
+		.four .lines {
+			position: relative;
+		}
+		.four .lines div {
+			background-color: #fff;
+		}
+		.four .top {
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			top: -20px;
+			left: 0;
+			transform: translateX(-400px);
+		}
+		.four .bottom {
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			transform: translateX(400px);
+		}
+		.four .left {
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: translateY(400px);
+		}
+		.four .right {
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			transform: translateY(-400px);
+		}
+		.section:last-child.animate .lines .top {
+			transform: translateX(0);
+			transition: all 1s;
+		}
+		
+
+	</style>
+	
+</head>
+<body>
+	<div id="dowebok">
+	    <div class="section one">
+	        <div>
+	        	<img src="images/1logo.png" alt="">
+	        </div>
+	        <div class = "txt">
+	        	<img src="images/1text_1.png" alt="">
+	        	<img src="images/1text_2.png" alt="">
+	        	<img src="images/1text_3.png" alt="">
+	        	<img src="images/1text_4.png" alt="">
+	        	<img src="images/1text_5.png" alt="">
+	        	<img src="images/1text_6.png" alt="">
+	        	<img src="images/1text_7.png" alt="">
+	        	<img src="images/1text_8.png" alt="">
+
+	        </div>
+	        <div>
+	        	<img src="images/1info.png" alt="">
+	        </div>
+	    </div>
+	    <div class="section two">
+	        <div class = "shield">
+	        	<img src="images/shield_1.png" alt="">
+	        	<img src="images/shield_2.png" alt="">
+	        	<img src="images/shield_3.png" alt="">
+	        	<img src="images/shield_4.png" alt="">
+	        	<img src="images/shield_5.png" alt="">
+	        	<img src="images/shield_6.png" alt="">
+	        	<img src="images/shield_7.png" alt="">
+	        	<img src="images/shield_8.png" alt="">
+	        	<img src="images/shield_9.png" alt="">
+	        </div>
+	        <div class = "info2">
+	        	<img src="images/2info.png" alt="">
+	        </div>
+	    </div>
+	    <div class="section three">
+	        <div>
+	        	<img src="images/3info.png" alt="">
+	        </div>
+	        <div class = "rock">
+	        	<img src="images/3circle.png" alt="">
+	        	<img class = "rocket" src="images/3rocket.png" alt="">
+	        </div>
+	    </div>
+	    <div class="section four">
+	        <div class = "fashion"></div>
+	        <div class = "lines">
+	        	<div class = "top"></div>
+	        	<div class = "right"></div>
+	        	<div class = "bottom"></div>
+	        	<div class = "left"></div>
+	        </div>
+	    </div>
+	</div>
+</body>
+<script src = "js/jquery-3.2.1.js"></script>
+<script src = "js/jquery.fullPage.min.js"></script>
+<script>
+	$(function(){
+	    $('#dowebok').fullpage({
+	    	afterLoad: function(anchor, index) {
+	    		$(".section").removeClass("animate");
+	    		setTimeout(function() {
+	    			$(".section").eq(index-1).addClass("animate");
+	    		},20)
+	    		
+	    	}
+	    	
+	    });
+	});
+</script>
+
+</html>

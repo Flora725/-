@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		var grd = ctx.createRadialGradient(300,200,30,300,200,150);
+		grd.addColorStop(0.2, "red");
+		grd.addColorStop(0.5, "green");
+		grd.addColorStop(0.8, "blue");
+		ctx.fillStyle = grd;
+		ctx.fillRect(50,50,300,200);
+		
+		
+		
+		
+		
+
+	</script>
+</html>

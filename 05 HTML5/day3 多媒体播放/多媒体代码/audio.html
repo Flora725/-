@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>audio</title>
+	<style>
+		video {
+			width: 500px;
+			height: 300px;
+		}
+	</style>
+</head>
+<body>
+	<video src="joy.mp4" controls loop poster="white.jpg"></video>
+</body>
+<script>
+	var video = document.querySelector("video");
+	video.onplay = function() {
+		console.log(111);
+	}
+	video.ontimeupdate = function() {
+		console.log("AesGcmEncryptResult33");
+	}
+	
+</script>
+</html>

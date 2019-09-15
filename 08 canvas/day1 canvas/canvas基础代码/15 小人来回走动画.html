@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			canvas {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas width = "600" height="400"></canvas>
+	</body>
+	<script>
+		var ctx = document.querySelector("canvas").getContext("2d");
+		//图width = 160px; height = 260px;
+		var x = 0;
+		var y;
+		var y1 = 130;//向右走的图片的纵坐标
+		var y2 = 65;//向左走的图片的纵坐标
+		var w = 40;
+		var xs = 0;
+		var step = 10;
+		var direction = true;
+		var img = new Image();
+		img.src = "./images/animation.png";
+		img.onload = function() {
+			setInterval(function() {
+				ctx.clearRect(0,0,600,400);
+				ctx.beginPath();
+				
+				if (xs >= 550) {
+					direction = false;
+				}
+				if(xs <= -10) {
+					direction = true;
+				}
+				if(direction) { 	//如果是true就向右走
+					xs += step;
+					y = y1;
+
+				} else {	//false就向左走
+					xs -= step;
+					y = y2;
+				}
+				ctx.drawImage(img, x*w, y, 40,65, xs,100, 80, 130);
+				x++;
+				if(x == 4) {
+					x = 0;
+				}
+			},200);
+		}
+		
+
+	</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style>
+		
+		#one {
+			border: 1px solid red;
+		}
+		#two {
+			border: 1px solid #000;
+			position: absolute;
+			left: 8px;
+			top:8px;
+		}
+	</style>
+</head>
+<body>
+	<canvas id = "one" width = "800" height="600"></canvas>
+	<canvas id = "two" width = "800" height="600"></canvas>
+</body>
+<script>
+	var ctx1 = document.querySelector("#one").getContext("2d");
+	var ctx2 = document.querySelector("#two").getContext("2d");
+
+	var img = new Image();
+	img.src = "images/clock.jpg";
+	img.onload = function() {
+		ctx1.arc(280,260,250,0,2*Math.PI);
+		ctx1.strokeStyle = "grey";
+		ctx1.lineWidth = "5";
+		ctx1.stroke();
+		ctx1.clip();
+		ctx1.drawImage(img,143,452,520,510,10,0,520,510);
+		
+	}
+	
+
+
+
+
+</script>
+</html>

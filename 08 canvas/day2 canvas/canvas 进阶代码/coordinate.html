@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+ 
+    <canvas width = "600" height = "320" id = 'canv'></canvas>
+    
+
+</body>
+<script>
+  var cas = document.querySelector("#canv");
+  var ctx = cas.getContext("2d");
+
+  // 绘制横坐标
+  axis();
+  
+  // 绘制纵坐标
+  ctx.beginPath();
+  // 如果不开启新路径，横坐标会重新描一遍
+  ctx.translate(-200,400);
+  // 每一次的坐标变换都是以上一次的位置为基准的，所以要先用translate把画布的中心点移动，再转动。
+  ctx.rotate(-Math.PI/2);
+  // 顺时针转动为正，反之为负
+  axis();
+
+  function axis() {
+    ctx.moveTo(100,300);
+    ctx.lineTo(300,300);
+    ctx.lineTo(280,295);
+    ctx.lineTo(290,300);
+    ctx.lineTo(280,305);
+    ctx.lineTo(300,300);
+    ctx.fill();
+    ctx.stroke();
+  }
+
+
+
+</script>
+</html>
